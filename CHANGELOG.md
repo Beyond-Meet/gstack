@@ -10,6 +10,7 @@ Six community fixes with 16 new tests. Telemetry off now means off everywhere. S
 - **`find -delete` replaced with POSIX `-exec rm`.** Safety Net and other non-GNU environments no longer choke on session cleanup.
 - **No more preemptive context warnings.** `/plan-eng-review` no longer warns you about running low on context. The system handles compaction automatically.
 - **Sidebar security test updated** for Write tool fallback string change.
+- **`gstack-relink` no longer double-prefixes `gstack-upgrade`.** Setting `skill_prefix=true` was creating `gstack-gstack-upgrade` instead of keeping the existing name. Now matches `setup` script behavior.
 
 ### Added
 

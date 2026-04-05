@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/garrytan/gstack/schemas/handoff.schema.json",
+  "title": "gstack Session Handoff",
+  "description": "Cross-runtime context transfer between gstack and an orchestrator (e.g., OpenClaw)",
+  "type": "object",
+  "required": ["from", "to", "project", "timestamp"],
+  "properties": {
+    "from": { "enum": ["gstack", "wintermute", "openclaw"] },
+    "to": { "enum": ["gstack", "wintermute", "openclaw"] },
+    "project": { "type": "string" },
+    "branch": { "type": "string" },
+    "timestamp": { "type": "string", "format": "date-time" },
+    "resume_prompt": { "type": "string", "maxLength": 4096, "description": "Exact prompt to resume session in the target runtime" }
+  },
+  "additionalProperties": false
+}

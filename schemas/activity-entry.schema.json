@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/garrytan/gstack/schemas/activity-entry.schema.json",
+  "title": "gstack Activity Entry",
+  "description": "Single entry in the weekly activity index (activity-YYYY-WNN.jsonl)",
+  "type": "object",
+  "required": ["ts", "project", "skill", "duration"],
+  "properties": {
+    "ts": { "type": "string", "format": "date-time" },
+    "project": { "type": "string" },
+    "skill": { "type": "string" },
+    "artifacts": { "type": "array", "items": { "type": "string" }, "description": "References to produced artifacts (e.g., pr:47, review-log.jsonl, learnings:3)" },
+    "duration": { "type": "integer", "description": "Session duration in seconds" },
+    "dispatch": { "type": "string", "description": "Orchestrator identity if this was a dispatched session" }
+  },
+  "additionalProperties": false
+}

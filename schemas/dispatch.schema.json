@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/garrytan/gstack/schemas/dispatch.schema.json",
+  "title": "gstack Dispatch",
+  "description": "Task dispatch from an orchestrator (e.g., OpenClaw/Wintermute) to gstack coding agent",
+  "type": "object",
+  "required": ["id", "dispatched_by", "task", "project", "project_dir"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^dispatch-" },
+    "dispatched_by": { "type": "string" },
+    "task": { "type": "string", "minLength": 1 },
+    "project": { "type": "string" },
+    "project_dir": { "type": "string" },
+    "target_agent": { "enum": ["claude", "codex", "cursor", "gemini"], "default": "claude" },
+    "learnings": { "type": "array", "items": { "type": "string" } },
+    "constraints": { "type": "array", "items": { "type": "string" } },
+    "callback_url": { "type": "string", "format": "uri" },
+    "clawvisor_task_id": { "type": "string" },
+    "source_signature": { "type": "string", "description": "HMAC-SHA256 of task field with local secret" },
+    "ttl_seconds": { "type": "integer", "minimum": 60, "maximum": 86400 }
+  },
+  "additionalProperties": false
+}

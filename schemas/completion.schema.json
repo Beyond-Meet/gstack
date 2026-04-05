@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/garrytan/gstack/schemas/completion.schema.json",
+  "title": "gstack Dispatch Completion",
+  "description": "Completion report from a gstack coding session back to the orchestrator",
+  "type": "object",
+  "required": ["dispatch_id", "status", "duration"],
+  "properties": {
+    "dispatch_id": { "type": "string", "pattern": "^dispatch-" },
+    "status": { "enum": ["completed", "failed", "cancelled", "timeout"] },
+    "duration": { "type": "integer", "description": "Session duration in seconds" },
+    "commits": { "type": "integer", "minimum": 0 },
+    "pr": { "type": "string", "description": "PR reference in owner/repo#number format" },
+    "error": { "type": "string", "description": "Error description, present only on failure/timeout" },
+    "retry_count": { "type": "integer", "minimum": 0, "description": "Number of retries attempted" },
+    "target_agent": { "enum": ["claude", "codex", "cursor", "gemini"] }
+  },
+  "additionalProperties": false
+}

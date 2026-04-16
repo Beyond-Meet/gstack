@@ -1211,6 +1211,7 @@ FIX TO 10: Rewrite vague UI descriptions with specific alternatives.
 8. Colored left-border on cards (`border-left: 3px solid <accent>`)
 9. Generic hero copy ("Welcome to [X]", "Unlock the power of...", "Your all-in-one solution for...")
 10. Cookie-cutter section rhythm (hero → 3 features → testimonials → pricing → CTA, every section same height)
+11. system-ui or `-apple-system` as the PRIMARY display/body font — the "I gave up on typography" signal. Pick a real typeface.
 
 Source: [OpenAI "Designing Delightful Frontends with GPT-5.4"](https://developers.openai.com/blog/designing-delightful-frontends-with-gpt-5-4) (Mar 2026) + gstack design methodology.
 - "Cards with icons" → what differentiates these from every SaaS template?

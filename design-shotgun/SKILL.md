@@ -716,6 +716,15 @@ C) "Name" — one-line visual description of this direction
 
 Draw on DESIGN.md, taste memory, and the user's request to make each concept distinct.
 
+**Anti-convergence directive (hard requirement):** Each variant MUST use a different
+font family, color palette, and layout approach. If two variants look like siblings
+— same typographic feel, overlapping color temperature, comparable layout rhythm —
+one of them failed. Regenerate the weaker one with a deliberately different direction.
+
+Concrete test: if someone could swap the headline text between two variants without
+noticing, they're too similar. Variants should feel like they came from three
+different design teams, not the same team at three different coffee levels.
+
 ### Step 3b: Concept Confirmation
 
 Use AskUserQuestion to confirm before spending API credits:
